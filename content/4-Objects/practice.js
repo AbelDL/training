@@ -27,8 +27,14 @@ const cart = {
     return this.products.reduce((total, product) => {
       return total + product.price;
     }, 0);
+  },
+
+  list: function () {
+    for (p of this.products) {
+      console.log(`${p.name} - ${p.price}`);
+    }
   }
 };
 
-console.log (cart.total());
-
+console.log(cart.total());
+cart.list();
