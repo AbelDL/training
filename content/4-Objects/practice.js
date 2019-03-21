@@ -30,7 +30,7 @@ const cart = {
   },
 
   list: function () {
-    for (p of this.products) {
+    for (const p of this.products) {
       console.log(`${p.name} - ${p.price}`);
     }
   }
