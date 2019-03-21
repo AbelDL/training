@@ -14,11 +14,23 @@
 console.log(Math.random());
 
 const mexicoRivals = [
-  {"country":"South Korea", "strength": 0.6},
-  {"country":"Germany", "strength": 0.9},
-  {"country":"Sweden", "strength": 0.5}
+  { "country": "South Korea", "strength": 0.6 },
+  { "country": "Germany", "strength": 0.9 },
+  { "country": "Sweden", "strength": 0.5 }
 ];
 
 const mexico = {
+  name: 'Mexico',
+  strength: 0.7,
+  points: 0,
+  //methodPlay: ['defensivo', 'contragolpe']
 
+  play: function playrival (rival) {
+    // el metodo recibe un rival.
+    // a veces gana, a veces pierde
+    // ganar depende de Math.random() y rival.strength
+    // si Math.random() es mayor que la fuerza del rival, entonces mexico gana
+    // en caso contrario, pierde.
+    return Math.random() > rival.strength;
+   }
 }
