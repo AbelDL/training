@@ -51,3 +51,8 @@ for (let i = 0; i < mexicoRivals.length; i++) {
   else
     console.log("mexico pierde", { mexico })
 }
+console.log(mexico.points)
+if (mexico.points >= 6)
+  console.log('mexico pasa')
+else
+  console.log('mexico no pasa')
