@@ -34,16 +34,20 @@ const mexico = {
    * 4. Caso contrario, regresa `false`
    */
   play: function (rival) {
-    return Math.random() > rival.strength;
+    const mexicoGana = Math.random() > rival.strength;
+    if (mexicoGana) this.points += 3;
+
+    return mexicoGana
   }
 }
+
 let mexicoWins
 for (let i = 0; i < mexicoRivals.length; i++) {
-  console.log(`${i}:: Mexico vs ${mexicoRivals[i].country}`)
+  console.log(`Mexico vs ${mexicoRivals[i].country}`)
   mexicoWins = mexico.play(mexicoRivals[i])
 
   if (mexicoWins)
-    console.log("mexico gana")
+    console.log("mexico gana", { mexico })
   else
-    console.log("mexico pierde")
+    console.log("mexico pierde", { mexico })
 }
