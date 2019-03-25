@@ -11,8 +11,6 @@
 // 3. Make Mexico try to advance the group until it can (exit only when it does)
 //    Announce how many times it required before quitting
 
-console.log(Math.random());
-
 const mexicoRivals = [
   { "country": "South Korea", "strength": 0.6 },
   { "country": "Germany", "strength": 0.9 },
@@ -23,14 +21,29 @@ const mexico = {
   name: 'Mexico',
   strength: 0.7,
   points: 0,
-  //methodPlay: ['defensivo', 'contragolpe']
 
-  play: function playrival (rival) {
-    // el metodo recibe un rival.
-    // a veces gana, a veces pierde
-    // ganar depende de Math.random() y rival.strength
-    // si Math.random() es mayor que la fuerza del rival, entonces mexico gana
-    // en caso contrario, pierde.
+  /**
+   * 
+   * @param {Rival} rival 
+   * @returns boolean
+   * 
+   * Recibe un rival { stregth: number, country: string}
+   * 1. Calcula la fuerza de juego de Mexico
+   * 2. Compara la fuerza de Mexico contra la del rival
+   * 3. Regresa `true` si la fuerza de Mexico supera la del rival
+   * 4. Caso contrario, regresa `false`
+   */
+  play: function (rival) {
     return Math.random() > rival.strength;
-   }
+  }
+}
+let mexicoWins
+for (let i = 0; i < mexicoRivals.length; i++) {
+  console.log(`${i}:: Mexico vs ${mexicoRivals[i].country}`)
+  mexicoWins = mexico.play(mexicoRivals[i])
+
+  if (mexicoWins)
+    console.log("mexico gana")
+  else
+    console.log("mexico pierde")
 }
