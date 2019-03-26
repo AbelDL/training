@@ -14,26 +14,32 @@ const lotr3 = new Book("LOTR: The return of the king", 13.99);
 
 class Cart {
     constructor() {
-        this.products = []
+        this.items = []
     }
 
     // Add product to cart
     addProduct(product) {
-        this.product.push(product);
+        this.items.push(product);
 
     }
 
     // product - quantity - price
     listProducts() {
-        console.log(`### ${this.name} ###`);
-        this.product.forEach((product, index) => {
+        console.log("ticket");
+        this.items.forEach((product, index) => {
             console.log(`${index + 1} - ${product.name}`);
         });
     }
+    // Cart total
+    total() {
+        return this.items.reduce((total, product) => {
+            return total + product.price;
+        }, 0);
+    }
 }
 
-// Cart total
-total()
+
+
 
 // This should work
 const cart = new Cart();
