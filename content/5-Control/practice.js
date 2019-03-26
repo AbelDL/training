@@ -41,18 +41,25 @@ const mexico = {
   }
 }
 
-let mexicoWins
-for (let i = 0; i < mexicoRivals.length; i++) {
-  console.log(`Mexico vs ${mexicoRivals[i].country}`)
-  mexicoWins = mexico.play(mexicoRivals[i])
+// Al inicio, van 0 intentos
+let intentos = 0;
 
-  if (mexicoWins)
-    console.log("mexico gana", { mexico })
-  else
-    console.log("mexico pierde", { mexico })
+// Queremos repetir un ciclo mientras Mexico no haya conseguido 6 puntos
+while (mexico.points < 6) {
+  intentos += 1;
+
+  // En las siguientes lineas, Mexico juega los tres partidos
+  for (const rival of mexicoRivals) {
+    console.log(`Mexico vs ${rival.country}`)
+    const mexicoWins = mexico.play(rival)
+
+    if (mexicoWins)
+      console.log("mexico gana")
+    else
+      console.log("mexico pierde")
+  }
+
 }
-console.log(mexico.points)
-if (mexico.points >= 6)
-  console.log('mexico pasa')
-else
-  console.log('mexico no pasa')
+
+console.log(`Mexico jugo ${intentos} veces la fase de grupos`)
+console.log(`Mexico Pasa la fase de grupos con ${mexico.points} puntos`)
