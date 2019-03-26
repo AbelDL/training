@@ -2,15 +2,16 @@
 // Basic class structure
 // Amazon Books
 class Book {
-    constructor(name, price) {
+    constructor(name, price, discount) {
         this.name = name;
         this.price = price;
+        this.discount = discount;
     }
 }
 
-const lotr1 = new Book("LOTR: The fellowship of the ring", 9.99);
-const lotr2 = new Book("LOTR: The two towers", 9.99);
-const lotr3 = new Book("LOTR: The return of the king", 13.99);
+const lotr1 = new Book("LOTR: The fellowship of the ring", 9.99, 2);
+const lotr2 = new Book("LOTR: The two towers", 9.99, 3);
+const lotr3 = new Book("LOTR: The return of the king", 13.99, 4);
 
 class Cart {
     constructor() {
@@ -33,7 +34,7 @@ class Cart {
     // Cart total
     total() {
         return this.items.reduce((total, product) => {
-            return total + product.price;
+            return total + product.price - product.discount;
         }, 0);
     }
 }
