@@ -27,8 +27,8 @@ class Cart {
     // product - quantity - price
     listProducts() {
         console.log("ticket");
-        this.items.forEach((product, index) => {
-            console.log(`${index + 1} - ${product.name}`);
+        this.items.forEach((product, index, ) => {
+            console.log(`${index + 1} - ${product.name} - ${product.price} - ${product.discount}`);
         });
     }
     // Cart total
@@ -39,9 +39,6 @@ class Cart {
     }
 }
 
-
-
-
 // This should work
 const cart = new Cart();
 cart.addProduct(lotr1);
@@ -49,3 +46,6 @@ cart.addProduct(lotr2);
 cart.addProduct(lotr3);
 cart.listProducts();
 console.log(cart.total());
+
+
+
