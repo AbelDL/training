@@ -1,12 +1,47 @@
 // Best representation in Javascript for:
 // - The tax percentage for purchases in Mexico
-const taxpercent = 16
+const taxpercent = 16;
+
+console.log(`${taxpercent}% es el porcentaje del impuesto por compras en México.!`);
+
+//ejemplo 2
+
+const tenis = {
+    name: 'nike fire ace',
+    size: '6',
+    price: 1500,
+    impuesto: { nombre: 'ieps', tasa: 0 }
+
+}
+const impuesto = 16;
+function porcentajeDeImpuesto(producto) {
+    const impuestoNulo = { nombre: 'ninguno', tasa: 0 };
+    const impuestoDelProducto = producto.impuesto || impuestoNulo;
+
+    return producto.price * impuestoDelProducto.tasa / 100;
+}
+console.log(`El aporcentaje de impuesto a tus ${tenis.name} es de ${porcentajeDeImpuesto(tenis)}`);
+
+
+
+//let base = 15
+//let altura = 30
+
+//function areaTriangulo(base, altura) {
+// return base * altura / 2
+//};
+
+//console.log(`El area de triangulo ${areaTriangulo(base, altura)}`);
+
 // - A terms && conditions document
+
 // - Houses in Game of thrones
+
 const houseName = 'cazadorez';
 const houseName2 = 'agricultores';
 const houseName3 = 'soldados';
 
+// - ejemplo 2
 const houses = [
     'soldados',
     'agricultores',
@@ -23,7 +58,7 @@ let lista2 =
         'estudiar'
     ];
 
-console.log({ taxpercent, houses, list, lista2 })
+console.log({ houses, list, lista2 })
 
 // - Teams in the world cup
 let teamscup = ['16']
@@ -55,10 +90,3 @@ const students = [
     { name: 'Pedro', age: 18, programlanguage: 'java' },
     { name: 'Hugo', age: 21, programlanguage: 'c++' }
 ];
-
-const pikqchu = {
-    name: 'pikachu',
-    height: 20
-}
-
-console.log(pikqchu)
