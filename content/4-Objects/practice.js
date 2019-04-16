@@ -38,6 +38,7 @@ const listaDeProductos = cart.products.forEach((cart, index) => {
   console.log(`${index + 1}-${cart.name}-${cart.price}`)
 });
 
+
 console.log(`\nEl total de su compra es de: ${cart.total()}`);
 
 
